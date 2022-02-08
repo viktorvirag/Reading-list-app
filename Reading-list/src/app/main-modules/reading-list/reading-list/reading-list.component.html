@@ -1,0 +1,3 @@
+<h1>Reading list</h1>
+<button routerLink="new">new</button>
+<app-reading-list-element *ngFor="let book of (booksFromService$ | async)" [bookFromParent]="book"></app-reading-list-element>
