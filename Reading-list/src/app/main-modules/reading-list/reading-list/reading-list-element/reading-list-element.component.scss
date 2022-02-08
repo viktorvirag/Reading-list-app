@@ -1,0 +1,18 @@
+.book-element-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.title {
+    font-size: 18px;
+    font-weight: bold;
+}
+.control {
+    display: flex;
+    align-items: center;
+}
+.edit-icon {
+    width: 25px;
+    cursor: pointer;
+    padding-right: 10px;
+}

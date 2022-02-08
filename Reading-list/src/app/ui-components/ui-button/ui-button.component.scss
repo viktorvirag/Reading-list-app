@@ -1,0 +1,25 @@
+@import '../../styles/variables.scss';
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px 30px;
+    cursor: pointer;
+    border: none;
+    border-radius: $border-radius-btn;
+    text-align: center;
+    font-size: 18px;
+    background-color: #0A9396;
+    color: white;
+}
+.disabled {
+    pointer-events: none;
+}
+.checked {
+    background-color: rgb(167, 167, 45);
+}
+.not-allowed {
+    cursor: not-allowed;
+}

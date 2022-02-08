@@ -1,0 +1,19 @@
+<h2>Add new book</h2>
+<form (keyup.enter)="addToBookList()">
+    <ui-input
+        inputName="Title"
+        [fc]="bookTitleControl"
+    ></ui-input>
+    <ui-input
+        inputName="Author"
+        [fc]="bookAuthorControl"
+    ></ui-input>
+    <ui-input
+        inputName="Description"
+        [fc]="bookDescriptionControl"
+    ></ui-input>
+    <!-- <button type='button' (click)="addToBookList()">add</button>
+    <button type='button' [routerLink]="['../']">cancel</button> -->
+    <app-ui-button (clickEmitter)="addToBookList()" [disabled]="!createBookForm.valid">add</app-ui-button>
+    <app-ui-button [routerLink]="['../']">cancel</app-ui-button>
+</form>
