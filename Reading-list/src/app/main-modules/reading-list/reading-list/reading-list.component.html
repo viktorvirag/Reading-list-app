@@ -1,15 +1,11 @@
 <h1>Reading list</h1>
 <div class="control-wrapper">
-    <app-ui-button routerLink="new">New</app-ui-button>
+    <app-ui-button class="new-book-btn" routerLink="new">New</app-ui-button>
     <div class="filter-options">
         <ng-container *ngIf="selectedFilter$ | async as selectedFilter">
-            <ng-template #loading>
-                <span>Loading...</span>
-            </ng-template>
-            <!-- {{selectedFilter | json}} -->
-            <app-ui-button (clickEmitter)="resetFilter()">Reset Filter</app-ui-button>
-            <app-ui-button (clickEmitter)="filterBookList(BookState.READING)" [isChecked]="selectedFilter.selectedState === BookState.READING">Reading</app-ui-button>
-            <app-ui-button (clickEmitter)="filterBookList(BookState.READ)" [isChecked]="selectedFilter.selectedState === BookState.READ">Read</app-ui-button>
+            <app-ui-button class="reset-filter-btn" (clickEmitter)="resetFilter()">Reset Filter</app-ui-button>
+            <app-ui-button class="reading-filter-btn" (clickEmitter)="filterBookList(BookState.READING)" [isChecked]="selectedFilter.selectedState === BookState.READING">Reading</app-ui-button>
+            <app-ui-button class="read-filter-btn" (clickEmitter)="filterBookList(BookState.READ)" [isChecked]="selectedFilter.selectedState === BookState.READ">Read</app-ui-button>
         </ng-container>
     </div>
 </div>
