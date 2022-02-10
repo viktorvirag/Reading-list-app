@@ -1,3 +1,22 @@
 <h1>Reading list</h1>
-<button routerLink="new">new</button>
-<app-reading-list-element *ngFor="let book of (booksFromService$ | async)" [bookFromParent]="book"></app-reading-list-element>
+<div class="control-wrapper">
+    <app-ui-button routerLink="new">New</app-ui-button>
+    <div class="filter-options">
+        <ng-container *ngIf="selectedFilter$ | async as selectedFilter">
+            <ng-template #loading>
+                <span>Loading...</span>
+            </ng-template>
+            <!-- {{selectedFilter | json}} -->
+            <app-ui-button (clickEmitter)="resetFilter()">Reset Filter</app-ui-button>
+            <app-ui-button (clickEmitter)="filterBookList(BookState.READING)" [isChecked]="selectedFilter.selectedState === BookState.READING">Reading</app-ui-button>
+            <app-ui-button (clickEmitter)="filterBookList(BookState.READ)" [isChecked]="selectedFilter.selectedState === BookState.READ">Read</app-ui-button>
+        </ng-container>
+    </div>
+</div>
+<ng-container *ngIf="booksFromService$ | async as booksFromService; else loading">
+    <app-reading-list-element *ngFor="let book of booksFromService" [bookFromParent]="book"></app-reading-list-element>
+</ng-container>
+
+<ng-template #loading>
+    <span>Loading books...</span>
+</ng-template>

@@ -1,4 +1,4 @@
 export enum BookState {
-    READING = 0,
-    READ = 1
+    READING = 1,
+    READ = 2
 }

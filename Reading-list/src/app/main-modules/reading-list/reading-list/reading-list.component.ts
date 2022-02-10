@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BookModel } from 'src/app/models/BookModel';
+import { BookState } from 'src/app/models/BookStateEnum';
 import { BookListService } from 'src/app/services/book-list.service';
 
 @Component({
@@ -10,12 +11,27 @@ import { BookListService } from 'src/app/services/book-list.service';
 })
 export class ReadingListComponent implements OnInit {
 
-  constructor(private bookListService: BookListService) { }
+  constructor(
+    private bookListService: BookListService
+    ) { }
 
   ngOnInit(): void {
+    this.bookListService.getBookListAndSetState();
   }
-  get booksFromService$(): Observable<BookModel[]> {
+  public filterBookList(filterState: BookState) {
+    this.bookListService.filterListByState(filterState);
+  }
+  public resetFilter() {
+    this.bookListService.resetFilter();
+  }
+  get booksFromService$(): Observable<BookModel[] | null> {
     return this.bookListService.books$;
+  }
+  get selectedFilter$() {
+    return this.bookListService.bookFilter$
+  }
+  public get BookState() {
+    return BookState
   }
 
 }

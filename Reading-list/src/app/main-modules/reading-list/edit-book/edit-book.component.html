@@ -1,5 +1,5 @@
-<h2>Add new book</h2>
-<form (keyup.enter)="addToBookList()">
+<h2>Edit Book</h2>
+<form (keyup.enter)="editBookList()">
     <ui-input
         inputName="Title"
         [fc]="bookTitleControl"
@@ -14,6 +14,6 @@
         inputName="Description"
         [fc]="bookDescriptionControl"
     ></app-ui-textarea>
-    <app-ui-button (clickEmitter)="addToBookList()" [disabled]="!createBookForm.valid">add</app-ui-button>
-    <app-ui-button [routerLink]="['../']">cancel</app-ui-button>
+    <app-ui-button (clickEmitter)="editBookList()" [disabled]="!createBookForm.valid">Edit</app-ui-button>
+    <app-ui-button [routerLink]="['../../']">cancel</app-ui-button>
 </form>

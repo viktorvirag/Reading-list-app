@@ -8,7 +8,7 @@ import { FormControl, ValidationErrors } from '@angular/forms';
 })
 export class UiInputComponent implements OnInit {
   //@Input() inputType: string|null;
-  @Input() placeholder: string|null = "write here...";
+  @Input() placeholder: string|null = "";
   @Input() inputName: string|null;
   @Input() inputInfo: string|null;
   @Input() isSubmitted: boolean = false;
@@ -27,12 +27,10 @@ export class UiInputComponent implements OnInit {
     return this.fc.dirty && !this.fc.valid && this.fc.touched;
   }
   get isFormSubmittedWithNoErrors() {
-    // if(this.inputType === "email") {
-    //   return this.fc.errors == null;
-    // } else {
-    //   return !this.isSubmitted && this.fc.errors == null;
-    // }
-    return !this.isSubmitted && this.fc.errors == null;
+    return !this.isSubmitted && this.fc.errors === null;
+  }
+  get isControlPistine() {
+    return !this.fc.value && this.fc.pristine;
   }
   get returnErrorMsg() {
     return this.errorDictionary[
@@ -41,7 +39,7 @@ export class UiInputComponent implements OnInit {
   }
     
   get serverErrorDictionaryKeys() {
-    return Object.keys(this.serverErrorDictionary)
+    return Object.keys(this.serverErrorDictionary);
   }
 
 }
