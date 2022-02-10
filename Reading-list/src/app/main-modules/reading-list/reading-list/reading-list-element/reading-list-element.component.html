@@ -1,8 +1,8 @@
 <div class="book-element-wrapper">
     <p class="title">{{bookFromParent?.title}}</p>
     <div class="control">
-        <img src="../../../../../assets/editing.png" alt="edit-icon" class="edit-icon">
-        <app-ui-button (clickEmitter)="setBookState()" [isChecked]="bookFromParent.state === BookState.READING">Reading</app-ui-button>
-        <app-ui-button (clickEmitter)="setBookState()" [isChecked]="bookFromParent.state === BookState.READ">Read</app-ui-button>
+        <img src="../../../../../assets/editing.png" alt="edit-icon" class="edit-icon" [routerLink]="['edit', bookFromParent.id]">
+        <app-ui-button (clickEmitter)="setBookState(BookState.READING)" [isChecked]="bookFromParent.state === BookState.READING">Reading</app-ui-button>
+        <app-ui-button (clickEmitter)="setBookState(BookState.READ)" [isChecked]="bookFromParent.state === BookState.READ">Read</app-ui-button>
     </div>
 </div>

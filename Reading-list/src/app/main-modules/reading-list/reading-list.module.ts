@@ -6,6 +6,9 @@ import { ReadingListElementComponent } from './reading-list/reading-list-element
 import { AddNewBookComponent } from './add-new-book/add-new-book.component';
 import { UiInputModule } from 'src/app/ui-components/ui-input/ui-input.module';
 import { UiButtonModule } from 'src/app/ui-components/ui-button/ui-button.module';
+import { EditBookComponent } from './edit-book/edit-book.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { UiTextareaModule } from 'src/app/ui-components/ui-textarea/ui-textarea.module';
 
 
 
@@ -13,13 +16,15 @@ import { UiButtonModule } from 'src/app/ui-components/ui-button/ui-button.module
   declarations: [
     ReadingListComponent,
     ReadingListElementComponent,
-    AddNewBookComponent
+    AddNewBookComponent,
+    EditBookComponent
   ],
   imports: [
     CommonModule,
     ReadingListRoutingModule,
     UiInputModule,
-    UiButtonModule
+    UiButtonModule,
+    UiTextareaModule
   ]
 })
 export class ReadingListModule { }

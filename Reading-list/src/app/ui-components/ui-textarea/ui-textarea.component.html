@@ -1,15 +1,7 @@
 <div class="input-name">{{inputName}}</div>
 <div *ngIf="inputInfo" class="input-info">{{inputInfo}}</div>
-<form>
-    <input
-    type="text"
-    [formControl]="fc"
-    placeholder="{{placeholder}}"
-    [class.input-no-value]="isControlPistine"
-    [class.input-error]="isFormControlInvalid"
-    [class.input-success]="isFormSubmittedWithNoErrors"
-    [class.input-disabled]="isInputDisabled"
-    />
+<form autocomplete="off">
+    <textarea cols="30" rows="10" [formControl]="fc" placeholder="{{placeholder}}" [class.input-no-value]="isControlPistine"></textarea>
 </form>
 <div *ngIf="isFormControlInvalid" class="error-container">
     <div class="error-message" *ngIf="isFormControlInvalid">{{ returnErrorMsg }}</div>

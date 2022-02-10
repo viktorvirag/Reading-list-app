@@ -1,0 +1,32 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "Harry Potter and the Philosopher's Stone",
+      "author": "J. K. Rowling",
+      "description": "Harry Potter and the Philosopher's Stone is a fantasy novel written by British author J. K. Rowling. The first novel in the Harry Potter series and Rowling's debut novel, it follows Harry Potter, a young wizard who discovers his magical heritage on his eleventh birthday,",
+      "state": 1
+    },
+    {
+      "id": 2,
+      "title": "Foundation",
+      "author": "Isaac Asimov",
+      "description": "",
+      "state": 1
+    },
+    {
+      "id": 3,
+      "title": "Teszt 1",
+      "author": "teszt author 1",
+      "description": null,
+      "state": 1
+    },
+    {
+      "id": 4,
+      "title": "Teszt 2 szerkesztett",
+      "author": "teszt 2 szerkesztett",
+      "description": "teszt 2\n",
+      "state": 2
+    }
+  ]
+}
