@@ -12,20 +12,6 @@
       "title": "Foundation",
       "author": "Isaac Asimov",
       "description": "",
-      "state": 1
-    },
-    {
-      "id": 3,
-      "title": "Teszt 1",
-      "author": "teszt author 1",
-      "description": null,
-      "state": 1
-    },
-    {
-      "id": 4,
-      "title": "Teszt 2 szerkesztett",
-      "author": "teszt 2 szerkesztett",
-      "description": "teszt 2\n",
       "state": 2
     }
   ]
